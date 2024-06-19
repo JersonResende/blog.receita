@@ -42,7 +42,7 @@
         <div class="container p-4" >
             <div class="row ">
                 <div class="user text-center">
-                    <img src="{{ url("/assets/imagens/logo.png")}}" width="100">
+                    <img src="{{ url("/assets/imagens/user.png")}}" width="100">
                 </div>
 
                 <div class="col-md-12" >
@@ -73,12 +73,11 @@
                       </div>
 
 
-                      <div class="d-grid gap-2 col-6 mx-auto">
-                        <button type="LOGIN">Login</button>
+                      <div class="d-grid gap-2 col-6 mx-auto text-warning">
+                        <button type="LOGIN" class="btn btn-warning" style="border-radius: 20px;">Login</button>
+                     </div>
                 </form>
 
-
-                    </div>
                     <br>
                       <div class="mb-4 form-check">
                         <input type="checkbox" class="form-check-input" id="exampleCheck1">
@@ -92,8 +91,6 @@
             </div>
         </div>
     </div>
-
-
 
     <!--------------------------- FOOTER---------------------------------------------->
 

@@ -20,7 +20,7 @@
 
                         <tr>
                             <td>{{ $value->conteudo }} - </td>
-                            <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id . '/edit') }}" role="button">Editar</a></td>
+                            <td><a class="btn btn-light" href="{{ url('/comentario/' . $value->id . '/editarcomentario') }}" role="button">Editar</a></td>
                             <td><a class="btn btn-light" href="{{ url('/publicacao/' . $value->id) }}" role="button">Visualizar</a></td>
                         </tr>
                     </form>

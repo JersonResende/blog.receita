@@ -10,10 +10,13 @@
 
 <div class="foto text-center">
     <h2 class="titulo text-black fw-bold">{!! $postagem->titulo !!}</h2>
+
+
+
     <div class="container-fluid">
       <br>
       <img src="data:image/png;base64,{!! $postagem->imagem !!}"width="700px" height="400px" style="border-radius: 20px;">
-        <p class="pub">{!! $postagem->user->name !!}</p>
+        {{-- <p class="pub">{!! $postagem->user->name !!}</p> --}}
 
 <!-- APENSA PESSOAS LOGADAS PODEM INTERAGIR -->
         @guest
@@ -21,7 +24,7 @@
 
                <div class="icones">
             <div class="btn-group" >
-                <a href="#" class="btn btn" aria-current="page"><i class="bi bi-bookmark" style='color:red;'></i> salvar</a>
+                <a href="{{ url('favoritar/' . $postagem->id) }}" class="btn btn" aria-current="page"><i class="bi bi-bookmark" style='color:red;'></i> salvar</a>
                 <a href="#" class="btn btn"><i class='bi bi-flag' style='color:red;'></i> denunciar</a>
             </div>
         </div>
@@ -62,7 +65,7 @@
          </div>
     </div>
 </div>
-
+<br><br>
 
 <!--COMENTAR-->
 <!-- APENSA PESSOAS LOGADAS PODEM COMENTAR -->
@@ -70,12 +73,12 @@
 @else
 
 <div class="comment">
-    <div class="container-fluid p-6">
+    <div class="container-fluid">
         <div class="row p-6">
-            <div class="col-md-6  mt-4">
+            <div class="col-md-6">
               <div class="com" style="border-radius: 20px;">
-                <div class="mt-2">
-                    <h3>gostou? deixe um comentario</h3>
+                    <h4>gostou? deixe um comentario</h4>
+                    <!--<p href=> PARA COMENTAR SE CADASTRE-->
                     <div class="form-floating">
                         <form method="POST" action="{{ url('/comentario/create') }}">
                             @csrf
@@ -84,32 +87,31 @@
                             <input type="submit" class="btn btn-warning" value="ENVIAR" style="float: right;">
                         </form>
                         <br>
-                    </div>
                 </div>
               </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 
 @endguest
 
+<div class="col-md-6">
+    <div class="com2" style="border-radius: 20px;">
+            <h3>Comentarios:</h3>
+            @foreach ($postagem->comentarios as $value)
+                <p>{{ $value->conteudo }}</p>
+                <p>Feito Por: {{ $value->user->name }}</p>
+                <p>Data: {{ $value->created_at }}
+                <br><br>
+ @endforeach
+    </div>
+</div>
+
+</div>
+</div>
+</div>
+</div>
 
 
 
-
-
-<!--COMENTARIOS-->
-
-
-<h3>Comentarios:</h3>
-@foreach ($postagem->comentarios as $value)
-    <p>{{ $value->conteudo }}</p>
-    <p>Feito Por: {{ $value->user->name }}</p>
-    <p>Data: {{ $value->created_at }}
-    <br><br>
-
-@endforeach
 
 @endsection
 

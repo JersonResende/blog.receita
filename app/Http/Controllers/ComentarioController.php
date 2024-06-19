@@ -16,7 +16,7 @@ class ComentarioController extends Controller
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
         $comentarios = Comentario::where('user_id', $perfil->id)->get();
-        return view('site.comentarios', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'comentarios' => $comentarios]);
+        return view('comentario.comentarios', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'comentarios' => $comentarios]);
     }
 
     public function store(Request $request)
@@ -41,5 +41,22 @@ class ComentarioController extends Controller
 
         return back()->withInput();
 
+    }
+
+    public function edit($id)
+    {
+        $perfil = auth()->user();
+        $comentario = Comentario::find($id);
+        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        return view('comentario.visualizarComentarios', ['comentario' => $comentario, 'categorias' => $categorias , 'perfil' => $perfil]);
+    }
+
+    public function update(Request $request, string $id)
+    {
+        $comentario = Comentario::find($id);
+        $comentario->conteudo = $request->conteudo;
+        $comentario->save();
+
+        return redirect('meuscomentarios')->with('status', 'Postagem atualizada com sucesso!');
     }
 }

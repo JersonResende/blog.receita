@@ -44,7 +44,7 @@
         <div class="container p-4" >
             <div class="row ">
                 <div class="user text-center">
-                    <img src="{{ url("/assets/imagens/logo.png")}}" width="100">
+                    <img src="{{ url("/assets/imagens/user.png")}}" width="100">
                 </div>
 
                 <div class="col-md-12" >
@@ -87,17 +87,17 @@
                       <input name="password" type="password" class="form-control" id="inputPassword" placeholder="confirmar senha" style="border-radius: 20px;">
                     </div>
 
-                    <div class="d-grid gap-2 col-6 mx-auto" >
-                      <button type="LOGIN">CADASTRAR</button>
+                    <div class="d-grid gap-2 col-6 mx-auto">
+                      <button type="LOGIN"  class="btn btn-warning" style="border-radius: 20px;">CADASTRAR</button>
 
                       </div>
                     </div>
                   </div>
                       <hr>
                       <p class="cadastro text-center">Já tem uma conta? <a href="{{ url("/entrar")}}" class="link-danger"><br>Entre aqui</a></p>
-
+                    </form>
                 </div>
- </form>
+
 
             </div>
 

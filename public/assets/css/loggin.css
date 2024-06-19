@@ -13,8 +13,9 @@
     margin: 30px auto;
     padding: 60px;
     width:600px;
-    height:600px;
+    height:auto;
     border:2px solid #eaad62;
+    border-radius: 20px;
 
 }
 
@@ -36,8 +37,9 @@
     margin: 30px auto;
     padding: 60px;
     width:500px;
-    height:600px;
+    height:auto;
     border:2px solid #eaad62;
+    border-radius: 20px;
   }
 
 
@@ -47,8 +49,9 @@
   margin: 30px auto;
   padding: 60px;
   width:650px;
-  height:750px;
+  height:auto;
   border:2px solid #eaad62;
+  border-radius: 20px;
 }
 
 .h3 {
@@ -61,7 +64,7 @@
   margin: 30px auto;
   padding: 60px;
   width:600px;
-  height:600px;
+  height:auto;
   border:2px solid #eaad62;
 }
 
@@ -71,7 +74,7 @@
   margin: 30px auto;
   padding: 60px;
   width:500px;
-  height:600px;
+  height:auto;
   border:2px solid #eaad62;
 }
 
@@ -80,11 +83,14 @@
     border-width: 30px;
     margin: 30px auto;
     padding: 60px;
-    width:700px;
+    width:auto;
     height:600px;
   }
 
 a, p, h5, label, button, h3, h4 {
     font-family: Georgia, serif;
     color:#490e0d;
+}
+button {
+    border-radius: 20px;
 }

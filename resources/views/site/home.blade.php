@@ -11,6 +11,7 @@
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -18,6 +19,12 @@
           <div class="carousel-caption d-none d-md-block">
             <h5>Torta Holandesa</h5>
           </div>
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.sabornamesa.com.br/media/k2/items/cache/f269038fa4534045b59925e7d5e023e1_XL.jpg"  height="500" class="d-block w-100" alt="" style="border-radius: 20px;">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>sushi</h5>
+            </div>
         </div>
         <div class="carousel-item">
           <img src="https://classic.exame.com/wp-content/uploads/2022/08/Tiramisu-Fasano.jpg?quality=70&strip=info&w=1200" height="500" class="d-block w-100" alt="" style="border-radius: 20px;">

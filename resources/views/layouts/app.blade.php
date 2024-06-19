@@ -65,18 +65,19 @@
   </div>
 @endguest
     </nav>
-
+    
+<div class="container">
+            @yield('content')
+        </div>
 
         <!-------------------------------- FOOTER --------------------------------->
 
     <br><br>
 
 <footer>
-        <div class="container">
-            @yield('content')
-        </div>
+
         <br> <br>
-        <footer class="rodape">
+        <div class="rodape" >
             <div class="container">
                 <div class="row p-4">
                   <div class="col-md-3 mt-3">
@@ -109,14 +110,16 @@
                   </div>
                 </div>
               </div>
-        </footer>
+            </div>
     </div>
+</footer>
+
         <!-- Option 1: Bootstrap Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
         </script>
 
-</footer>
+
 
     </body>
     </html>

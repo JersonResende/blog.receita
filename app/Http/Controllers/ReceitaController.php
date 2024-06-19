@@ -12,9 +12,10 @@ class ReceitaController extends Controller
     public function index()
     {
         $perfil = auth()->user();
+        $postagem = Postagem::find($id);
         $categorias = Categoria::orderBy('nome', 'ASC')->get();
         $receitas = Postagem::get();
-        return view('site.receita', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil]);
+        return view('site.receita', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'postagem' => $postagem]);
     }
 
     public function show(string $id)

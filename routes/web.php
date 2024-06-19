@@ -45,13 +45,19 @@ Route::get('/perfil', [App\Http\Controllers\PerfilController::class, 'index'])->
 
 Route::get('/salvos', [App\Http\Controllers\SalvosController::class, 'index'])->name('salvos');
 
-Route::get('/meuscomentarios', [App\Http\Controllers\ComentarioController::class, 'index'])->name('comentario');
+Route::get('/favoritar/{id}', [App\Http\Controllers\SalvosController::class, 'favoritar'])->name('salvos');
+
+Route::get('/meuscomentarios', [App\Http\Controllers\ComentarioController::class, 'index'])->name('meuscomentarios');
 
 Route::get('/entrar', [App\Http\Controllers\UserController::class, 'index'])->name('entrar');
 
 Route::get('/cadastro', [App\Http\Controllers\CadastroController::class, 'index'])->name('cadastro');
 
 Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::class, 'store'])->name('comentario.create');
+
+Route::get('/comentario/{id}/editarcomentario', [App\Http\Controllers\ComentarioController::class, 'edit'])->name('comentario.editar');
+
+Route::put('/comentario/{id}/edit', [App\Http\Controllers\ComentarioController::class, 'update'])->name('comentario.editar');
 
 Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'login'])->name('login.usuario');
 
