@@ -12,7 +12,7 @@
                     @csrf
                     @foreach ($comentarios as $value)
 
-                    <form method="POST" action="{{ url('/publicacao/' . $value->id) }}">
+                    <form method="POST" action="{{ url('/publicacao/' . $value->postagem_id) }}">
 
                         @csrf
                         @method('DELETE')
