@@ -31,6 +31,6 @@ class SalvosController extends Controller
             $favorito->save();
         }
 
-        return back()->withInput();
+        return redirect('salvos')->with('status', 'Postagem atualizada com sucesso!');
     }
 }

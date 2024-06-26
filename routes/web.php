@@ -57,6 +57,8 @@ Route::post('/comentario/create', [App\Http\Controllers\ComentarioController::cl
 
 Route::get('/comentario/{id}/editarcomentario', [App\Http\Controllers\ComentarioController::class, 'edit'])->name('comentario.editar');
 
+Route::delete('/comentario/{id}', [App\Http\Controllers\ComentarioController::class, 'destroy'])->name('comentario.destroy');
+
 Route::put('/comentario/{id}/edit', [App\Http\Controllers\ComentarioController::class, 'update'])->name('comentario.editar');
 
 Route::post('/login_usuario', [App\Http\Controllers\UserController::class, 'login'])->name('login.usuario');

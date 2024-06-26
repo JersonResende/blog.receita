@@ -11,8 +11,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <br>
-            <div class="card">
-                <div class="card-header">Comentario - EDITAR</div>
+
 
                 <div class="card-body">
 
@@ -26,14 +25,12 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ url('/comentario/' . $comentario->id . '/edit') }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ url('/comentario/' . $value->id) }}" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <br>
                   <label for="fname">Comentario:</label><br>
-                  <textarea id="inp_editor1" class="form-control" name="conteudo" >
-                        {{ $comentario->conteudo }}
-                  </textarea><br>
+                  <textarea id="inp_editor1" class="form-control" name="conteudo" >{{ $comentario->conteudo }}</textarea><br>
 
                   <input type="submit"  class="form-control" value="ENVIAR">
 

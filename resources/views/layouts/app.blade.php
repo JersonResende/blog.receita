@@ -47,7 +47,7 @@
   </form>
 <div class="dropdown">
       <a href="perfil3.html" class="btn btn me-2 dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-         <img src="{{ url("/assets/imagens/perfil.png")}}" width="25" >
+         <img src="{{ url("/assets/imagens/user.png")}}" width="25" >
          {!! $perfil->name !!}
       </a>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="background-color: #FBF7F1;">

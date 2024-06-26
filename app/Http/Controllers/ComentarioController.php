@@ -13,7 +13,7 @@ class ComentarioController extends Controller
     public function index()
     {
         $perfil = auth()->user();
-        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $categorias = Categoria::orderBy('id', 'desc')->get();
         $receitas = Postagem::get();
         $comentarios = Comentario::where('user_id', $perfil->id)->get();
         return view('comentario.comentarios', ['categorias' => $categorias, 'receitas' => $receitas, 'perfil' => $perfil, 'comentarios' => $comentarios]);
@@ -47,7 +47,7 @@ class ComentarioController extends Controller
     {
         $perfil = auth()->user();
         $comentario = Comentario::find($id);
-        $categorias = Categoria::orderBy('nome', 'ASC')->get();
+        $categorias = Categoria::orderBy('id', 'desc')->get();
         return view('comentario.visualizarComentarios', ['comentario' => $comentario, 'categorias' => $categorias , 'perfil' => $perfil]);
     }
 
@@ -58,5 +58,13 @@ class ComentarioController extends Controller
         $comentario->save();
 
         return redirect('meuscomentarios')->with('status', 'Postagem atualizada com sucesso!');
+    }
+
+    public function destroy(string $id)
+    {
+        $comentario = Comentario::find($id);
+        $comentario->delete();
+
+        return redirect('meuscomentarios')->with('status', 'Comentario excluido com sucesso!');
     }
 }

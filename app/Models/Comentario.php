@@ -21,4 +21,14 @@ class Comentario extends Model
     {
         return $this->hasOne(Postagem::class, 'id', 'postagem_id');
     }
+
+    public function categoria(): HasOne
+    {
+        return $this->hasOne(Categoria::class, 'id', 'categoria_id');
+    }
+
+    public function comentarios(): HasMany
+    {
+        return $this->hasMany(Comentario::class, 'postagem_id', 'id');
+    }
 }
